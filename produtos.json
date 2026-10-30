@@ -1,0 +1,51 @@
+{
+  "fonte": "Portfólio de Produtos MAC Estopas 2026 (Classificação da Informação: PÚBLICA)",
+  "observacao_precos": "Os preços são definidos conforme o produto, a modalidade de embalagem e a quantidade solicitada.",
+  "contato": {"telefone": "(81) 99927-3629", "whatsapp": "5581999273629", "email": "macestopas@gmail.com"},
+  "linhas": [
+    {
+      "id": "estopas",
+      "numero": "01",
+      "titulo": "Estopas",
+      "descricao": "Tecidos desfiados ou moídos, em opções brancas, coloridas, cruas e 100% algodão, indicadas para limpeza e polimento.",
+      "indice": ["Desfiada Branca – Malha fria / 100% Algodão", "Desfiada Colorida – Malha fria / 100% Algodão", "Moída – Crua (branca) / Colorida"],
+      "embalagens": ["100g a 1kg", "2kg a 5kg", "10 a 50kg"],
+      "capa": "img/capa-estopas.jpg"
+    },
+    {
+      "id": "trapos",
+      "numero": "02",
+      "titulo": "Trapos, panos, tapetes e retalhos",
+      "descricao": "Materiais em algodão e malha, lisos, costurados ou destinados a enchimento, para limpezas leves, delicadas e pesadas e atividades de manutenção.",
+      "indice": ["Algodão", "Malha", "Costurado"],
+      "embalagens": ["1kg a 50kg"],
+      "capa": "img/capa-trapos.jpg"
+    },
+    {
+      "id": "outros",
+      "numero": "03",
+      "titulo": "Outros materiais",
+      "descricao": "Materiais para aplicações específicas além da limpeza, como aplicação de produtos químicos, vedação e fabricação de vassouras.",
+      "indice": ["Meada"],
+      "embalagens": ["1kg a 50kg"],
+      "capa": "img/capa-outros.jpg"
+    }
+  ],
+  "produtos": [
+    {"id": 1, "linha": "estopas", "nome": "Estopa branca desfiada malha fria (PV)", "indicacao": "Indicada para limpeza leve e para a aplicação de produtos químicos.", "specs": [["Material", "Malha fria (PV)"], ["Cor", "Branca"], ["Forma", "Desfiada"]], "caracteristicas": ["Não solta fiapos.", "Absorção média."], "imagem": "img/produto-01.jpg"},
+    {"id": 2, "linha": "estopas", "nome": "Estopa colorida desfiada malha fria (PV)", "indicacao": "Indicada para a limpeza de peças e equipamentos.", "specs": [["Material", "Malha fria (PV)"], ["Cor", "Colorida"], ["Forma", "Desfiada"]], "caracteristicas": ["Não solta fiapos.", "Absorção média."], "imagem": "img/produto-02.jpg"},
+    {"id": 3, "linha": "estopas", "nome": "Estopa colorida desfiada 100% algodão", "indicacao": "Indicada para a limpeza de peças e maquinários sensíveis.", "specs": [["Material", "100% algodão"], ["Cor", "Colorida"], ["Forma", "Desfiada"]], "caracteristicas": ["Ótima absorção.", "Não solta fiapos."], "imagem": "img/produto-03.jpg"},
+    {"id": 4, "linha": "estopas", "nome": "Estopa branca 100% algodão", "indicacao": "Indicada para polimento e para a limpeza de peças e maquinários delicados, podendo ser utilizada em atividades de vistoria.", "specs": [["Material", "100% algodão"], ["Cor", "Branca"], ["Forma", "Desfiada"]], "caracteristicas": ["100% algodão.", "Indicada para aplicações delicadas.", "Ótima absorção."], "imagem": "img/produto-04.jpg"},
+    {"id": 5, "linha": "estopas", "nome": "Estopa crua moída", "indicacao": "Indicada para limpeza pesada e recomendada para maquinários pesados.", "specs": [["Cor", "Crua"], ["Forma", "Moída"]], "caracteristicas": ["Ótima absorção.", "Solta fiapos.", "Não recomendada para peças delicadas e motores."], "imagem": "img/produto-05.jpg"},
+    {"id": 6, "linha": "estopas", "nome": "Estopa colorida moída", "indicacao": "Indicada para limpeza pesada e recomendada para maquinários pesados.", "specs": [["Cor", "Colorida"], ["Forma", "Moída"]], "caracteristicas": ["Ótima absorção.", "Solta fiapos.", "Não recomendada para peças delicadas e motores."], "imagem": "img/produto-06.jpg"},
+    {"id": 7, "linha": "trapos", "nome": "Trapo costurado colorido (tapete)", "indicacao": "Indicado para a limpeza de maquinários, embarcações e para a manutenção de tubulações.", "specs": [["Material", "Misto"], ["Cor", "Colorido"], ["Forma", "Costurado"]], "caracteristicas": ["Ótima absorção.", "Não solta fiapos."], "imagem": "img/produto-07.jpg"},
+    {"id": 8, "linha": "trapos", "nome": "Trapo costurado branco (tapete)", "indicacao": "Indicado para a limpeza de maquinários, embarcações e para a manutenção de tubulações.", "specs": [["Material", "Misto"], ["Cor", "Branca"], ["Forma", "Costurado"]], "caracteristicas": ["Ótima absorção.", "Não solta fiapos.", "Ótimo para aplicação de produto químico."], "imagem": "img/produto-08.jpg"},
+    {"id": 9, "linha": "trapos", "nome": "Trapo de algodão branco", "indicacao": "Indicado para a limpeza de peças e equipamentos, especialmente em atividades de vistoria.", "specs": [["Material", "Algodão"], ["Cor", "Branca"]], "caracteristicas": ["Ótima absorção.", "Não solta fiapos."], "imagem": "img/produto-09.jpg"},
+    {"id": 10, "linha": "trapos", "nome": "Trapo de algodão colorido liso", "indicacao": "Indicado para limpezas delicadas e pesadas.", "specs": [["Material", "Algodão"], ["Cor", "Colorido"], ["Acabamento", "Liso"]], "caracteristicas": ["Ótima absorção.", "Não solta fiapos."], "imagem": "img/produto-10.jpg"},
+    {"id": 11, "linha": "trapos", "nome": "Trapo de algodão colorido liso grosso", "indicacao": "Indicado para limpeza pesada.", "specs": [["Material", "Algodão"], ["Cor", "Colorido"], ["Acabamento", "Liso grosso"]], "caracteristicas": ["Ótima absorção.", "Não solta fiapos."], "imagem": "img/produto-11.jpg"},
+    {"id": 12, "linha": "trapos", "nome": "Trapo de malha liso colorido", "indicacao": "Indicado para limpeza leve e para a manutenção de peças e maquinários.", "specs": [["Material", "Malha"], ["Cor", "Colorido"], ["Acabamento", "Liso"]], "caracteristicas": ["Absorção média.", "Indicado para manutenção."], "imagem": "img/produto-12.jpg"},
+    {"id": 13, "linha": "trapos", "nome": "Trapo de malha liso branco", "indicacao": "Indicado para limpeza leve e para a manutenção de peças e maquinários.", "specs": [["Material", "Malha (PV)"], ["Cor", "Branca"], ["Acabamento", "Liso"]], "caracteristicas": ["Ótima absorção.", "Não solta fiapos.", "Indicado para aplicações de produtos químicos."], "imagem": "img/produto-13.jpg"},
+    {"id": 14, "linha": "trapos", "nome": "Retalho para enchimento", "indicacao": "Indicado para o enchimento de sacos para academia, pufes e almofadas.", "specs": [["Material", "Misto"], ["Cor", "Colorido"], ["Acabamento", "Retalhos"]], "caracteristicas": ["Versátil para diferentes finalidades."], "imagem": "img/produto-14.jpg"},
+    {"id": 15, "linha": "outros", "nome": "Meada", "indicacao": "Indicada para a aplicação de produtos químicos, vedação e fabricação de vassouras.", "specs": [["Tipo", "Meada"]], "caracteristicas": ["Utilizada em serviços de reparo em embarcações."], "imagem": "img/produto-15.jpg"}
+  ]
+}

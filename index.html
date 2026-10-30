@@ -1,0 +1,882 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" type="image/png" href="img/logo-mac.png">
+<title>M.A.C Estopas</title>
+<meta name="description" content="M.A.C Estopas: portfólio de estopas, trapos, panos, tapetes, retalhos e meada para limpeza e uso profissional. Solicite sua cotação pelo WhatsApp (81) 99927-3629.">
+<meta name="author" content="NEXO by Tech · nexobytech.com.br">
+<meta property="og:title" content="M.A.C Estopas | Portfólio de produtos">
+<meta property="og:description" content="Soluções e materiais para limpeza e uso profissional. Resistência • Qualidade • Confiança.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..900&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: o portfólio impresso transformado em site — faixas por linha de produto, fichas técnicas com rótulos em mono, um único momento ousado (a limpeza da tela e da placa) */
+:root{
+  --bg:#f3f6fa; --surface:#ffffff; --surface-2:#e8eef6; --ink:#0d1a2e; --muted:#55627a; --line:#d5deea;
+  --heading:#0c2a5e; --accent:#1661c7; --accent-ink:#ffffff; --accent-soft:#e3eefc;
+  --warn:#9a5b00; --warn-soft:#fdf1dc; --ok:#11743d; --ok-soft:#e2f5ea;
+  --band:#0b2452; --band-2:#123a7a; --band-ink:#eef4ff; --band-muted:#a8c2e8; --band-line:#ffffff26; --band-hi:#7fbaff;
+  --zap:#14904a; --zap-hover:#0f7a3e; --zap-ink:#ffffff; --plate:#ffffff; --photo:#55585e; --brand-plate:transparent; --brand-pad:0;
+  --shadow:0 18px 40px -18px #0b245259;
+  --f-display:"Archivo","Arial Narrow",Arial,sans-serif;
+  --f-body:"Figtree","Segoe UI",Roboto,Arial,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#08111f; --surface:#0f1b2e; --surface-2:#16263f; --ink:#e6edf8; --muted:#97a8c1; --line:#22385a;
+  --heading:#b9d4ff; --accent:#4d94f2; --accent-ink:#06142b; --accent-soft:#15325c;
+  --warn:#f3b45a; --warn-soft:#3a2a10; --ok:#5fd38f; --ok-soft:#10301f;
+  --band:#061533; --band-2:#0d2c63; --band-ink:#eef4ff; --band-muted:#a8c2e8; --band-line:#ffffff1f; --band-hi:#7fbaff;
+  --zap:#1fb35c; --zap-hover:#29c96a; --zap-ink:#04210f; --plate:#ffffff; --photo:#3a3d43; --brand-plate:#ffffff; --brand-pad:4px 10px;
+  --shadow:0 18px 40px -18px #000000aa; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#08111f; --surface:#0f1b2e; --surface-2:#16263f; --ink:#e6edf8; --muted:#97a8c1; --line:#22385a;
+  --heading:#b9d4ff; --accent:#4d94f2; --accent-ink:#06142b; --accent-soft:#15325c;
+  --warn:#f3b45a; --warn-soft:#3a2a10; --ok:#5fd38f; --ok-soft:#10301f;
+  --band:#061533; --band-2:#0d2c63; --band-ink:#eef4ff; --band-muted:#a8c2e8; --band-line:#ffffff1f; --band-hi:#7fbaff;
+  --zap:#1fb35c; --zap-hover:#29c96a; --zap-ink:#04210f; --plate:#ffffff; --photo:#3a3d43; --brand-plate:#ffffff; --brand-pad:4px 10px;
+  --shadow:0 18px 40px -18px #000000aa; color-scheme:dark }
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6}
+a{color:inherit}
+button,input,textarea,select{font:inherit;color:inherit}
+img{max-width:100%;height:auto}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.skip-link{position:absolute;left:-999px;top:8px;z-index:200;background:var(--surface);padding:10px 14px;border-radius:8px}
+.skip-link:focus{left:16px}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3,h4{font-family:var(--f-display);text-wrap:balance;margin:0}
+h2{font-size:clamp(28px,4vw,44px);line-height:1.08;font-style:italic;font-weight:850;font-variation-settings:"wdth" 112;color:var(--heading);letter-spacing:-.01em}
+.label{margin:0;font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.lede{color:var(--muted);font-size:17px;max-width:62ch;margin:0}
+.sec{padding-block:clamp(56px,8vw,96px)}
+.sec-head{display:grid;gap:12px;margin-bottom:32px}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:8px;padding:14px 20px;font-weight:700;text-decoration:none;cursor:pointer;transition:transform .15s,background .15s}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-zap{background:var(--zap);color:var(--zap-ink)}
+.btn-zap:hover{background:var(--zap-hover)}
+.btn-ghost{background:transparent;color:inherit;border:1.5px solid currentColor}
+.btn svg{width:20px;height:20px;flex:none}
+.btn[aria-disabled="true"]{opacity:.5;pointer-events:none}
+
+/* cabeçalho */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in srgb,var(--surface) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .bar{display:flex;align-items:center;gap:20px;min-height:80px;padding-block:8px}
+.brand{display:flex;align-items:center;flex:none;text-decoration:none;background:var(--brand-plate);border-radius:10px;padding:var(--brand-pad)}
+.brand img{display:block;height:58px;width:auto;transition:transform .25s}
+.brand:hover img{transform:scale(1.04)}
+@media (max-width:480px){.brand img{height:46px}}
+.nav-wrap{display:contents}
+.nav{display:flex;gap:22px;margin-left:auto;font-weight:600;font-size:15px;list-style:none;margin-block:0;padding:0}
+.nav a{text-decoration:none;color:var(--muted)}
+.nav a:hover{color:var(--accent)}
+.cart-btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent-soft);color:var(--heading);border:0;border-radius:8px;padding:10px 14px;font-weight:700;cursor:pointer}
+.cart-btn .n{min-width:22px;height:22px;border-radius:11px;background:var(--accent);color:var(--accent-ink);font-size:12px;display:grid;place-items:center;padding:0 6px;font-variant-numeric:tabular-nums}
+.cart-btn.bump{animation:bump .35s}
+@keyframes bump{50%{transform:scale(1.12)}}
+.menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:8px;width:44px;height:44px;cursor:pointer;color:var(--heading)}
+@media (max-width:900px){
+  .nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;background:var(--surface);border-bottom:1px solid var(--line);padding:6px max(16px,env(safe-area-inset-right,0px)) 12px max(16px,env(safe-area-inset-left,0px))}
+  .nav.open{display:flex}
+  .nav a{display:block;padding:12px 0;border-bottom:1px solid var(--line)}
+  .menu-btn{display:grid;place-items:center;margin-left:auto}
+  .cart-btn .t{display:none}
+}
+
+/* hero */
+.hero{background:radial-gradient(1200px 500px at 85% -10%,var(--band-2),transparent 60%),var(--band);color:var(--band-ink);padding-block:clamp(48px,7vw,84px);overflow:hidden}
+.hero .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,64px);align-items:center}
+.hero .grid>*{min-width:0}
+.hero .label{color:var(--band-muted)}
+.hero h1{font-size:clamp(36px,5.8vw,68px);line-height:1;font-style:italic;font-weight:900;font-variation-settings:"wdth" 114;letter-spacing:-.015em;margin-top:16px}
+.hero h1 span{color:var(--band-hi)}
+.hero p{color:var(--band-muted);font-size:18px;max-width:52ch;margin:20px 0 0}
+.hero .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero .btn-ghost{color:var(--band-ink)}
+.stats{display:flex;flex-wrap:wrap;gap:12px 36px;margin:30px 0 0;padding:0;list-style:none}
+.stats strong{display:block;font-family:var(--f-display);font-style:italic;font-weight:850;font-variation-settings:"wdth" 110;font-size:30px;line-height:1;font-variant-numeric:tabular-nums}
+.stats small{color:var(--band-muted);font-size:13px}
+.slogan{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:26px;padding-top:20px;border-top:1px solid var(--band-line);font-family:var(--f-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--band-muted)}
+.slogan b{color:var(--band-ink)}
+
+/* placa */
+.plate-card{background:#ffffff0d;border:1px solid var(--band-line);border-radius:16px;padding:14px;margin:0}
+.plate{position:relative;aspect-ratio:5/4;max-width:100%;border-radius:10px;overflow:hidden;background:var(--plate);cursor:none;touch-action:none;user-select:none}
+.plate .clean{position:absolute;inset:0;display:grid;place-items:center;background:var(--plate)}
+.plate .clean img{width:70%;max-width:420px}
+.plate .clean::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,#ffffffcc 45%,transparent 55%);transform:translateX(-120%);pointer-events:none}
+.plate.done .clean::after{animation:shine 1.2s .2s ease-out}
+@keyframes shine{to{transform:translateX(120%)}}
+.plate canvas{position:absolute;inset:0;width:100%;height:100%;transition:opacity .6s}
+.plate .mop{position:absolute;left:0;top:0;width:110px;height:110px;pointer-events:none;opacity:0;transition:opacity .2s;filter:drop-shadow(0 8px 10px #0006)}
+.mop img{width:100%;height:100%;display:block}
+.plate .hint{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);background:#0b2452e6;color:#fff;font-size:13px;font-weight:600;padding:8px 14px;border-radius:30px;white-space:nowrap;pointer-events:none;transition:opacity .3s}
+.plate .win{position:absolute;inset:auto 12px 12px 12px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;background:#0b2452;color:#fff;border-radius:10px;padding:12px 14px;transform:translateY(140%);transition:transform .45s cubic-bezier(.2,.9,.3,1.2)}
+.plate.done .win{transform:none}
+.plate .win b{font-family:var(--f-display);font-style:italic;font-variation-settings:"wdth" 110;font-size:17px}
+.plate .win .btn{padding:10px 14px;font-size:14px}
+.plate-hud{display:flex;align-items:center;gap:14px;margin-top:12px;font-family:var(--f-mono);font-size:12px;color:var(--band-muted);letter-spacing:.06em}
+.meter{flex:1;height:8px;background:#ffffff1f;border-radius:6px;overflow:hidden}
+.meter i{display:block;height:100%;width:0;background:linear-gradient(90deg,#62acff,#b8dcff);transition:width .25s}
+.plate-hud output{min-width:4ch;text-align:right;color:var(--band-ink);font-variant-numeric:tabular-nums;font-weight:700}
+.link-btn{background:none;border:0;color:inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:4px;font-family:var(--f-mono);font-size:12px}
+@media (max-width:900px){.hero .grid{grid-template-columns:1fr}.plate{aspect-ratio:4/3}}
+
+/* empresa */
+.about .grid{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(28px,5vw,64px)}
+.about .grid>*{min-width:0}
+.about .lede{margin-top:16px}
+.about h2,.contact h2{margin-top:10px}
+.mvv{margin:0;border-top:2px solid var(--heading)}
+.mvv>div{display:grid;grid-template-columns:120px 1fr;gap:18px;padding-block:20px;border-bottom:1px solid var(--line)}
+.mvv dt{font-family:var(--f-mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;padding-top:3px}
+.mvv dd{margin:0}
+@media (max-width:820px){.about .grid{grid-template-columns:1fr}.mvv>div{grid-template-columns:1fr;gap:6px}}
+
+/* catálogo */
+.catalog{background:var(--surface-2)}
+.index{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 26px;padding:0;list-style:none;counter-reset:none}
+.index a{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;height:100%;transition:border-color .15s}
+.index a:hover{border-color:var(--accent)}
+.index .no{font-family:var(--f-display);font-style:italic;font-weight:900;font-size:34px;line-height:1;color:var(--accent);grid-row:span 2}
+.index strong{color:var(--heading);font-size:15px;line-height:1.25}
+.index ul{margin:0;padding:0;list-style:none;font-size:13px;color:var(--muted)}
+@media (max-width:820px){.index{grid-template-columns:1fr}}
+.toolbar{position:sticky;top:calc(80px + env(safe-area-inset-top,0px));z-index:20;display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding-block:12px;margin-bottom:12px;background:var(--surface-2)}
+.toolbar .grp{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1.5px solid var(--line);background:var(--surface);border-radius:30px;padding:8px 14px;cursor:pointer;font-weight:700;font-size:13px;color:var(--heading)}
+.chip[aria-pressed="true"]{background:var(--heading);color:var(--surface);border-color:var(--heading)}
+.search{margin-left:auto;position:relative}
+.search input{border:1.5px solid var(--line);background:var(--surface);border-radius:8px;padding:9px 12px 9px 36px;width:240px;max-width:100%}
+.search svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:var(--muted)}
+.result{font-size:13px;color:var(--muted);margin:0 0 8px}
+@media (max-width:700px){.toolbar{position:static}.search{margin-left:0;width:100%}.search input{width:100%}}
+
+.line-sec{padding-top:36px}
+.line-head{display:grid;grid-template-columns:1fr 340px;gap:28px;align-items:center;background:var(--band);color:var(--band-ink);border-radius:16px;overflow:hidden;margin-bottom:22px}
+.line-head>*{min-width:0}
+.line-head .txt{padding:28px}
+.line-head .no{font-family:var(--f-display);font-style:italic;font-weight:900;font-size:56px;line-height:.9;color:var(--band-hi)}
+.line-head h3{font-size:clamp(24px,3.2vw,34px);font-style:italic;font-weight:850;font-variation-settings:"wdth" 110;text-transform:uppercase;margin-top:8px;line-height:1.05}
+.line-head p{color:var(--band-muted);margin:10px 0 0;max-width:60ch}
+.line-head .meta{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;margin-top:16px;font-size:14px}
+.line-head .meta b{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.pack{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.pack li{border:1px solid var(--band-line);background:#ffffff12;border-radius:20px;padding:3px 10px;font-size:13px;font-variant-numeric:tabular-nums}
+.line-head img{width:100%;height:100%;object-fit:cover;display:block;min-height:200px}
+@media (max-width:820px){.line-head{grid-template-columns:1fr}.line-head img{max-height:220px;order:-1}}
+
+.products{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:20px;margin:0;padding:0;list-style:none}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;height:100%;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.products>li{min-width:0}
+.ph{position:relative;display:block;border:0;padding:0;background:var(--photo);cursor:zoom-in;aspect-ratio:4/3;width:100%}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.tag{position:absolute;left:10px;top:10px;font-family:var(--f-mono);font-size:11px;font-weight:700;letter-spacing:.08em;background:#0b2452e6;color:#fff;padding:4px 8px;border-radius:4px}
+.card .body{padding:18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card h4{font-family:var(--f-body);font-size:15px;line-height:1.3;color:var(--heading);font-weight:800;text-transform:uppercase;letter-spacing:.01em}
+.card .ind{margin:0;color:var(--muted);font-size:14px}
+.spec{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:0;font-size:13px;border-top:1px solid var(--line);padding-top:10px}
+.spec dt{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:2px}
+.spec dd{margin:0;font-weight:600}
+.feat{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.feat li{font-size:12px;font-weight:600;background:var(--ok-soft);color:var(--ok);border-radius:4px;padding:3px 8px}
+.feat li.warn{background:var(--warn-soft);color:var(--warn)}
+.card .acts{margin-top:auto;display:flex;gap:8px;padding-top:6px}
+.add{flex:1;display:flex;justify-content:space-between;align-items:center;gap:8px;border:0;background:var(--accent-soft);color:var(--heading);font-weight:700;padding:11px 14px;border-radius:8px;cursor:pointer;font-size:14px}
+.add.on{background:var(--accent);color:var(--accent-ink)}
+.more{border:1.5px solid var(--line);background:transparent;border-radius:8px;padding:0 12px;font-weight:600;font-size:13px;cursor:pointer;color:var(--heading)}
+.price-note{margin:36px 0 0;padding:16px 18px;border-left:4px solid var(--accent);background:var(--surface);border-radius:0 8px 8px 0;color:var(--ink);font-weight:600}
+.empty{padding:40px;text-align:center;color:var(--muted);border:1.5px dashed var(--line);border-radius:12px;margin-top:24px}
+
+/* processo */
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:0;padding:0;list-style:none}
+.process li{padding:22px 22px 0 0;border-top:2px solid var(--line);position:relative}
+.process li::before{content:"";position:absolute;left:0;top:-7px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.process .num{font-family:var(--f-display);font-style:italic;font-weight:900;font-size:40px;color:var(--accent);line-height:1;font-variant-numeric:tabular-nums}
+.process h3{font-family:var(--f-body);font-size:16px;color:var(--heading);margin:10px 0 4px}
+.process p{margin:0;font-size:14px;color:var(--muted)}
+@media (max-width:900px){.process{grid-template-columns:repeat(2,1fr);row-gap:28px}}
+@media (max-width:480px){.process{grid-template-columns:1fr}}
+
+/* contato */
+.contact{background:var(--band);color:var(--band-ink)}
+.contact h2{color:var(--band-ink)}
+.contact .label{color:var(--band-muted)}
+.contact .lede{color:var(--band-muted);margin-top:14px}
+.contact .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start}
+.contact .grid>*{min-width:0}
+.quick{display:grid;gap:10px;margin:24px 0 0;padding:0;list-style:none}
+.quick a{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:15px 18px;border:1px solid var(--band-line);border-radius:10px;text-decoration:none;background:#ffffff0a;font-weight:600;transition:background .15s}
+.quick a:hover{background:#ffffff1a}
+.quick small{color:var(--band-muted);font-weight:500;display:block;font-size:13px}
+.info{background:#ffffff0d;border:1px solid var(--band-line);border-radius:14px;padding:22px;display:grid;gap:16px;font-style:normal}
+.info .row{display:grid;gap:2px}
+.info .row>span{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--band-muted)}
+.info .row div{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.info strong{font-size:18px;user-select:all;font-variant-numeric:tabular-nums}
+.copy{background:#ffffff14;border:1px solid var(--band-line);color:var(--band-ink);border-radius:6px;padding:6px 10px;font-size:12px;font-weight:600;cursor:pointer}
+@media (max-width:820px){.contact .grid{grid-template-columns:1fr}}
+
+.foot{background:var(--band);color:var(--band-muted);border-top:1px solid var(--band-line);padding-block:28px;font-size:13px}
+.foot .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;align-items:center}
+.foot p{margin:0}
+.foot .dev{margin-top:14px;justify-content:center}
+.dev-line{display:flex;align-items:center;justify-content:center;gap:6px;font-size:11px;color:var(--band-muted);opacity:.7;transition:opacity .2s}
+.dev-line:hover{opacity:1}
+.dev-link{display:inline-block;line-height:0}
+.dev-link img{height:12px;width:auto;display:block}
+.foot b{color:var(--band-ink);font-family:var(--f-display);font-style:italic}
+
+/* flutuantes */
+.fab{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:40;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.fab .wa{width:60px;height:60px;border-radius:50%;background:var(--zap);color:#fff;display:grid;place-items:center;box-shadow:0 10px 25px -6px #0008;position:relative;text-decoration:none}
+.fab .wa svg{width:32px;height:32px}
+.fab .wa::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--zap);animation:ring 2.4s infinite}
+@keyframes ring{from{transform:scale(1);opacity:.8}to{transform:scale(1.6);opacity:0}}
+.fab .qbtn{background:var(--heading);color:var(--surface);border:0;border-radius:30px;padding:11px 16px;font-weight:700;box-shadow:0 10px 25px -8px #0008;cursor:pointer}
+
+/* gaveta da cotação */
+.scrim{position:fixed;inset:0;background:#020a18a6;z-index:50;opacity:0;pointer-events:none;transition:opacity .25s}
+.scrim.open{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(460px,100%);background:var(--surface);z-index:60;transform:translateX(105%);visibility:hidden;transition:transform .3s cubic-bezier(.2,.8,.2,1),visibility 0s .3s;display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);padding-right:env(safe-area-inset-right,0px)}
+.drawer.open{transform:none;visibility:visible;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.drawer .dh{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid var(--line)}
+.drawer .dh h2{font-size:22px}
+.x{background:var(--surface-2);border:0;width:38px;height:38px;border-radius:8px;cursor:pointer;font-size:20px;color:var(--ink)}
+.drawer .scroll{overflow:auto;padding:18px 20px;flex:1;display:grid;gap:18px;align-content:start}
+.item{display:grid;grid-template-columns:56px 1fr auto;gap:12px;align-items:start;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.item img{width:56px;height:44px;object-fit:cover;border-radius:6px}
+.item>div{min-width:0;display:grid;gap:6px}
+.item strong{font-size:13px;line-height:1.3;text-transform:uppercase}
+.item .two{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.item select,.item input{width:100%;border:1.5px solid var(--line);border-radius:6px;padding:7px 8px;font-size:13px;background:var(--bg)}
+.item .rm{background:none;border:0;color:var(--muted);cursor:pointer;font-size:12px;text-decoration:underline}
+.fields{display:grid;gap:10px}
+.fields label{display:grid;gap:4px;font-size:13px;font-weight:600;color:var(--muted)}
+.fields input,.fields textarea{border:1.5px solid var(--line);border-radius:8px;padding:10px 12px;background:var(--bg);font-size:15px}
+.fields textarea{min-height:64px;resize:vertical}
+.preview{background:var(--surface-2);border-radius:10px;padding:12px 14px;font-family:var(--f-mono);font-size:12px;white-space:pre-wrap;word-break:break-word;max-height:180px;overflow:auto;margin-top:8px}
+.drawer .df{border-top:1px solid var(--line);padding:16px 20px;display:grid;gap:8px}
+.drawer .df .btn{width:100%}
+.row2{display:flex;gap:8px}
+.row2 button{flex:1;background:var(--surface-2);border:0;border-radius:8px;padding:10px;font-weight:600;cursor:pointer;font-size:14px}
+.empty-cart{text-align:center;color:var(--muted);padding:24px 10px}
+
+/* ficha */
+dialog.pd{border:0;padding:0;border-radius:16px;width:min(880px,calc(100% - 32px));max-height:calc(100% - 32px);background:var(--surface);color:var(--ink);box-shadow:0 30px 80px #0009}
+dialog.pd::backdrop{background:#020a18b3}
+.pd .g{display:grid;grid-template-columns:1fr 1fr}
+.pd .g>*{min-width:0}
+.pd .img{background:var(--photo);position:relative;min-height:300px}
+.pd .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pd .info2{padding:26px;display:grid;gap:14px;align-content:start}
+.pd h3{font-size:24px;font-style:italic;font-weight:850;font-variation-settings:"wdth" 106;color:var(--heading);line-height:1.1;text-transform:uppercase}
+.pd .sub{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-top:4px}
+.pd .acts{display:grid;gap:8px}
+.pd .close{position:absolute;top:12px;right:12px;z-index:2;background:#ffffffe6;color:#0b2452}
+.pd .pk{font-size:13px;color:var(--muted);margin:0}
+.pd-desc{margin:0;color:var(--muted)}
+.pd .feat-title{margin-bottom:8px}
+.preview{margin-top:8px}
+@media (max-width:700px){.pd .g{grid-template-columns:1fr}.pd .img{min-height:0;aspect-ratio:4/3}}
+
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,160%);background:var(--heading);color:var(--surface);padding:12px 18px;border-radius:30px;font-weight:600;z-index:70;transition:transform .3s;max-width:calc(100% - 32px)}
+.toast.show{transform:translate(-50%,0)}
+
+/* abertura */
+#intro{position:fixed;inset:0;z-index:100;cursor:none;touch-action:none}
+#intro canvas{position:absolute;inset:0;width:100%;height:100%}
+#intro .mop{position:absolute;left:0;top:0;pointer-events:none;will-change:transform;filter:drop-shadow(0 14px 18px #0007)}
+#intro .skip{position:absolute;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));background:#0b2452;color:#fff;border:0;border-radius:30px;padding:10px 16px;font-weight:700;cursor:pointer}
+#intro .cap{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:var(--f-display);font-style:italic;font-weight:900;font-variation-settings:"wdth" 118;font-size:clamp(30px,7vw,72px);color:#f3ead9;text-shadow:0 2px 0 #0004;pointer-events:none;text-align:center;line-height:1;transition:opacity .4s;width:max-content;max-width:90vw}
+#intro .cap small{display:block;font-family:var(--f-mono);font-style:normal;font-weight:700;font-size:12px;letter-spacing:.2em;margin-top:14px;color:#e3d6bf}
+#intro.fade{transition:opacity .7s;opacity:0}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#catalogo">Pular para o catálogo</a>
+
+<div id="intro" aria-hidden="true">
+  <canvas id="introCanvas"></canvas>
+  <canvas id="introFx"></canvas>
+  <div class="cap" id="introCap">MAC ESTOPAS<small>Resistência • Qualidade • Confiança</small></div>
+  <div class="mop" id="introMop"><img alt=""></div>
+  <button class="skip" id="skipIntro" type="button">Pular abertura ›</button>
+</div>
+
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="#inicio" aria-label="M.A.C Estopas, voltar ao início">
+      <img src="img/logo-mac.png" alt="M.A.C Estopas" width="394" height="222">
+    </a>
+    <nav class="nav-wrap" aria-label="Navegação principal">
+      <ul class="nav" id="nav">
+        <li><a href="#empresa">Empresa</a></li>
+        <li><a href="#estopas">Estopas</a></li>
+        <li><a href="#trapos">Trapos e panos</a></li>
+        <li><a href="#outros">Outros materiais</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <button class="cart-btn" id="cartBtn" type="button" aria-label="Abrir minha cotação" aria-controls="drawer">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 4h6l1 3h4v13H4V7h4z"/><path d="M9 12h6M9 16h4"/></svg>
+      <span class="t">Cotação</span><span class="n" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<main id="conteudo">
+  <section class="hero" id="inicio" aria-labelledby="h-hero">
+    <div class="wrap grid">
+      <div>
+        <p class="label">Portfólio de produtos 2026</p>
+        <h1 id="h-hero">Soluções e materiais para limpeza e <span>uso profissional.</span></h1>
+        <p>Estopas, trapos, panos, tapetes, retalhos e meada para limpeza, polimento e manutenção. Atendemos empresas de diferentes portes na Região Metropolitana do Recife há mais de oito anos.</p>
+        <div class="actions">
+          <a class="btn btn-zap" href="https://wa.me/5581999273629?text=Ol%C3%A1%2C%20M.A.C%20Estopas!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3z"/></svg> Solicitar cotação</a>
+          <a class="btn btn-ghost" href="#catalogo">Ver catálogo</a>
+        </div>
+        <ul class="stats">
+          <li><strong>15</strong><small>produtos</small></li>
+          <li><strong>3</strong><small>linhas</small></li>
+          <li><strong>8+</strong><small>anos de mercado</small></li>
+        </ul>
+        <p class="slogan"><b>Resistência</b>•<b>Qualidade</b>•<b>Confiança</b></p>
+      </div>
+      <figure class="plate-card">
+        <div class="plate" id="plate">
+          <div class="clean"><img src="img/logo-mac.png" alt="Logotipo M.A.C Estopas" width="394" height="222"></div>
+          <canvas id="plateCanvas" role="img" aria-label="Placa suja. Passe o cursor ou o dedo para limpar."></canvas>
+          <div class="mop" id="plateMop"><img alt=""></div>
+          <div class="hint" id="plateHint">Passe a estopa para limpar a placa</div>
+          <div class="win"><b>Placa limpa!</b><a class="btn btn-zap" href="#catalogo">Ver produtos →</a></div>
+        </div>
+        <figcaption class="plate-hud">
+          <span>LIMPEZA</span>
+          <span class="meter"><i id="meter"></i></span>
+          <output id="pct" for="plateCanvas">0%</output>
+          <button class="link-btn" id="dirtyAgain" type="button">Sujar de novo</button>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="sec about" id="empresa" aria-labelledby="h-empresa">
+    <div class="wrap grid">
+      <div>
+        <p class="label">Quem somos</p>
+        <h2 id="h-empresa">Tradição regional e soluções para uso profissional.</h2>
+        <p class="lede">A M.A.C Estopas atua no fornecimento de estopas, panos, trapos e materiais para limpeza, polimento e manutenção. Com mais de oito anos de mercado, atende clientes de diferentes portes na Região Metropolitana do Recife, unindo diversidade de materiais, atendimento próximo e relações comerciais de confiança.</p>
+      </div>
+      <dl class="mvv">
+        <div><dt>Missão</dt><dd>Fornecer materiais de limpeza e manutenção profissional com qualidade, atendimento responsável e soluções adequadas às necessidades de cada cliente.</dd></div>
+        <div><dt>Visão</dt><dd>Ser reconhecida como referência regional no fornecimento de estopas e materiais de limpeza profissional, ampliando sua presença e relações empresariais.</dd></div>
+        <div><dt>Valores</dt><dd>Qualidade, confiança, responsabilidade, transparência, respeito ao cliente, compromisso com o atendimento e melhoria contínua.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="sec catalog" id="catalogo" aria-labelledby="h-cat">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Portfólio de produtos</p>
+        <h2 id="h-cat">Índice</h2>
+      </div>
+      <ul class="index"><li><a href="#estopas"><span class="no">01</span><strong>ESTOPAS</strong><ul><li>Desfiada Branca – Malha fria / 100% Algodão</li><li>Desfiada Colorida – Malha fria / 100% Algodão</li><li>Moída – Crua (branca) / Colorida</li></ul></a></li><li><a href="#trapos"><span class="no">02</span><strong>TRAPOS, PANOS, TAPETES E RETALHOS</strong><ul><li>Algodão</li><li>Malha</li><li>Costurado</li></ul></a></li><li><a href="#outros"><span class="no">03</span><strong>OUTROS MATERIAIS</strong><ul><li>Meada</li></ul></a></li></ul>
+
+      <div class="toolbar" role="search">
+        <div class="grp" role="group" aria-label="Filtrar por linha">
+          <button class="chip" type="button" data-line="todas" aria-pressed="true">Todas</button>
+          <button class="chip" type="button" data-line="estopas" aria-pressed="false">Estopas</button>
+          <button class="chip" type="button" data-line="trapos" aria-pressed="false">Trapos e panos</button>
+          <button class="chip" type="button" data-line="outros" aria-pressed="false">Outros</button>
+        </div>
+        <div class="grp" role="group" aria-label="Filtrar por característica">
+          <button class="chip" type="button" data-feat="Não solta fiapos." aria-pressed="false">Não solta fiapos</button>
+          <button class="chip" type="button" data-feat="Ótima absorção." aria-pressed="false">Ótima absorção</button>
+          <button class="chip" type="button" data-feat="Absorção média." aria-pressed="false">Absorção média</button>
+        </div>
+        <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="Buscar produto…" aria-label="Buscar produto"></label>
+      </div>
+      <p class="result" id="result" aria-live="polite">Exibindo 15 de 15 produtos</p>
+
+      
+      <section class="line-sec" id="estopas" aria-labelledby="h-estopas">
+        <header class="line-head">
+          <div class="txt"><span class="no">01</span><h3 id="h-estopas">Estopas</h3><p>Tecidos desfiados ou moídos, em opções brancas, coloridas, cruas e 100% algodão, indicadas para limpeza e polimento.</p>
+            <div class="meta"><b>6 produtos</b><span>Disponível nas embalagens:</span><ul class="pack"><li>100g a 1kg</li><li>2kg a 5kg</li><li>10 a 50kg</li></ul></div></div>
+          <img src="img/capa-estopas.jpg" alt="Produtos da linha Estopas" width="760" height="528" loading="lazy">
+        </header>
+        <ul class="products">
+          <li data-id="1"><article class="card" id="p01" aria-labelledby="n1">
+            <button class="ph" type="button" data-open="1" aria-label="Ver ficha técnica: Estopa branca desfiada malha fria (PV)"><img src="img/produto-01.jpg" alt="Estopa branca desfiada malha fria (PV)" width="512" height="384" loading="lazy"><span class="tag">PRODUTO 01</span></button>
+            <div class="body"><h4 id="n1">Estopa branca desfiada malha fria (PV)</h4><p class="ind">Indicada para limpeza leve e para a aplicação de produtos químicos.</p>
+              <dl class="spec"><dt>Material</dt><dd>Malha fria (PV)</dd><dt>Cor</dt><dd>Branca</dd><dt>Forma</dt><dd>Desfiada</dd></dl>
+              <ul class="feat" aria-label="Principais características"><li>Não solta fiapos.</li><li>Absorção média.</li></ul>
+              <div class="acts"><button class="add" type="button" data-add="1" aria-pressed="false">Adicionar à cotação <span aria-hidden="true">+</span></button><button class="more" type="button" data-open="1">Ficha</button></div>
+            </div></article></li>
+          <li data-id="2"><article class="card" id="p02" aria-labelledby="n2">
+            <button class="ph" type="button" data-open="2" aria-label="Ver ficha técnica: Estopa colorida desfiada malha fria (PV)"><img src="img/produto-02.jpg" alt="Estopa colorida desfiada malha fria (PV)" width="512" height="384" loading="lazy"><span class="tag">PRODUTO 02</span></button>
+            <div class="body"><h4 id="n2">Estopa colorida desfiada malha fria (PV)</h4><p class="ind">Indicada para a limpeza de peças e equipamentos.</p>
+              <dl class="spec"><dt>Material</dt><dd>Malha fria (PV)</dd><dt>Cor</dt><dd>Colorida</dd><dt>Forma</dt><dd>Desfiada</dd></dl>
+              <ul class="feat" aria-label="Principais características"><li>Não solta fiapos.</li><li>Absorção média.</li></ul>
+              <div class="acts"><button class="add" type="button" data-add="2" aria-pressed="false">Adicionar à cotação <span aria-hidden="true">+</span></button><button class="more" type="button" data-open="2">Ficha</button></div>
+            </div></article></li>
+          <li data-id="3"><article class="card" id="p03" aria-labelledby="n3">
+            <button class="ph" type="button" data-open="3" aria-label="Ver ficha técnica: Estopa colorida desfiada 100% algodão"><img src="img/produto-03.jpg" alt="Estopa colorida desfiada 100% algodão" width="512" height="384" loading="lazy"><span class="tag">PRODUTO 03</span></button>
+            <div class="body"><h4 id="n3">Estopa colorida desfiada 100% algodão</h4><p class="ind">Indicada para a limpeza de peças e maquinários sensíveis.</p>
+              <dl class="spec"><dt>Material</dt><dd>100% algodão</dd><dt>Cor</dt><dd>Colorida</dd><dt>Forma</dt><dd>Desfiada</dd></dl>
+              <ul class="feat" aria-label="Principais características"><li>Ótima absorção.</li><li>Não solta fiapos.</li></ul>
+              <div class="acts"><button class="add" type="button" data-add="3" aria-pressed="false">Adicionar à cotação <span aria-hidden="true">+</span></button><button class="more" type="button" data-open="3">Ficha</button></div>
+            </div></article></li>
+          <li data-id="4"><article class="card" id="p04" aria-labelledby="n4">
+            <button class="ph" type="button" data-open="4" aria-label="Ver ficha técnica: Estopa branca 100% algodão"><img src="img/produto-04.jpg" alt="Estopa branca 100% algodão" width="512" height="384" loading="lazy"><span class="tag">PRODUTO 04</span></button>
+            <div class="body"><h4 id="n4">Estopa branca 100% algodão</h4><p class="ind">Indicada para polimento e para a limpeza de peças e maquinários delicados, podendo ser utilizada em atividades de vistoria.</p>
+              <dl class="spec"><dt>Material</dt><dd>100% algodão</dd><dt>Cor</dt><dd>Branca</dd><dt>Forma</dt><dd>Desfiada</dd></dl>
+              <ul class="feat" aria-label="Principais características"><li>100% algodão.</li><li>Indicada para aplicações delicadas.</li><li>Ótima absorção.</li></ul>
+              <div class="acts"><button class="add" type="button" data-add="4" aria-pressed="false">Adicionar à cotação <span aria-hidden="true">+</span></button><button class="more" type="button" data-open="4">Ficha</button></div>
+            </div></article></li>
+          <li data-id="5"><article class="card" id="p05" aria-labelledby="n5">
+            <button class="ph" type="button" data-open="5" aria-label="Ver ficha técnica: Estopa crua moída"><img src="img/produto-05.jpg" alt="Estopa crua moída" width="512" height="384" loading="lazy"><span class="tag">PRODUTO 05</span></button>
+            <div class="body"><h4 id="n5">Estopa crua moída</h4><p class="ind">Indicada para limpeza pesada e recomendada para maquinários pesados.</p>
+              <dl class="spec"><dt>Cor</dt><dd>Crua</dd><dt>Forma</dt><dd>Moída</dd></dl>
+              <ul class="feat" aria-label="Principais características"><li>Ótima absorção.</li><li class="warn">Solta fiapos.</li><li class="warn">Não recomendada para peças delicadas e motores.</li></ul>
+              <div class="acts"><button class="add" type="button" data-add="5" aria-pressed="false">Adicionar à cotação <span aria-hidden="true">+</span></button><button class="more" type="button" data-open="5">Ficha</button></div>
+            </div></article></li>
+          <li data-id="6"><article class="card" id="p06" aria-labelledby="n6">
+            <button class="ph" type="button" data-open="6" aria-label="Ver ficha técnica: Estopa colorida moída"><img src="img/produto-06.jpg" alt="Estopa colorida moída" width="515" height="462" loading="lazy"><span class="tag">PRODUTO 06</span></button>
+            <div class="body"><h4 id="n6">Estopa colorida moída</h4><p class="ind">Indicada para limpeza pesada e recomendada para maquinários pesados.</p>
+              <dl class="spec"><dt>Cor</dt><dd>Colorida</dd><dt>Forma</dt><dd>Moída</dd></dl>
+              <ul class="feat" aria-label="Principais características"><li>Ótima absorção.</li><li class="warn">Solta fiapos.</li><li class="warn">Não recomendada para peças delicadas e motores.</li></ul>
+              <div class="acts"><button class="add" type="button" data-add="6" aria-pressed="false">Adicionar à cotação <span aria-hidden="true">+</span></button><button class="more" type="button" data-open="6">Ficha</button></div>
+            </div></article></li>
+        </ul>
+      </section>
+      <section class="line-sec" id="trapos" aria-labelledby="h-trapos">
+        <header class="line-head">
+          <div class="txt"><span class="no">02</span><h3 id="h-trapos">Trapos, panos, tapetes e retalhos</h3><p>Materiais em algodão e malha, lisos, costurados ou destinados a enchimento, para limpezas leves, delicadas e pesadas e atividades de manutenção.</p>
+            <div class="meta"><b>8 produtos</b><span>Disponível nas embalagens:</span><ul class="pack"><li>1kg a 50kg</li></ul></div></div>
+          <img src="img/capa-trapos.jpg" alt="Produtos da linha Trapos, panos, tapetes e retalhos" width="760" height="528" loading="lazy">
+        </header>
+        <ul class="products">
+          <li data-id="7"><article class="card" id="p07" aria-labelledby="n7">
+            <button class="ph" type="button" data-open="7" aria-label="Ver ficha técnica: Trapo costurado colorido (tapete)"><img src="img/produto-07.jpg" alt="Trapo costurado colorido (tapete)" width="512" height="384" loading="lazy"><span class="tag">PRODUTO 07</span></button>
+            <div class="body"><h4 id="n7">Trapo costurado colorido (tapete)</h4><p class="ind">Indicado para a limpeza de maquinários, embarcações e para a manutenção de tubulações.</p>
+              <dl class="spec"><dt>Material</dt><dd>Misto</dd><dt>Cor</dt><dd>Colorido</dd><dt>Forma</dt><dd>Costurado</dd></dl>
+              <ul class="feat" aria-label="Principais características"><li>Ótima absorção.</li><li>Não solta fiapos.</li></ul>
+              <div class="acts"><button class="add" type="button" data-add="7" aria-pressed="false">Adicionar à cotação <span aria-hidden="true">+</span></button><button class="more" type="button" data-open="7">Ficha</button></div>
+            </div></article></li>
+          <li data-id="8"><article class="card" id="p08" aria-labelledby="n8">
+            <button class="ph" type="button" data-open="8" aria-label="Ver ficha técnica: Trapo costurado branco (tapete)"><img src="img/produto-08.jpg" alt="Trapo costurado branco (tapete)" width="384" height="512" loading="lazy"><span class="tag">PRODUTO 08</span></button>
+            <div class="body"><h4 id="n8">Trapo costurado branco (tapete)</h4><p class="ind">Indicado para a limpeza de maquinários, embarcações e para a manutenção de tubulações.</p>
+              <dl class="spec"><dt>Material</dt><dd>Misto</dd><dt>Cor</dt><dd>Branca</dd><dt>Forma</dt><dd>Costurado</dd></dl>
+              <ul class="feat" aria-label="Principais características"><li>Ótima absorção.</li><li>Não solta fiapos.</li><li>Ótimo para aplicação de produto químico.</li></ul>
+              <div class="acts"><button class="add" type="button" data-add="8" aria-pressed="false">Adicionar à cotação <span aria-hidden="true">+</span></button><button class="more" type="button" data-open="8">Ficha</button></div>
+            </div></article></li>
+          <li data-id="9"><article class="card" id="p09" aria-labelledby="n9">
+            <button class="ph" type="button" data-open="9" aria-label="Ver ficha técnica: Trapo de algodão branco"><img src="img/produto-09.jpg" alt="Trapo de algodão branco" width="512" height="384" loading="lazy"><span class="tag">PRODUTO 09</span></button>
+            <div class="body"><h4 id="n9">Trapo de algodão branco</h4><p class="ind">Indicado para a limpeza de peças e equipamentos, especialmente em atividades de vistoria.</p>
+              <dl class="spec"><dt>Material</dt><dd>Algodão</dd><dt>Cor</dt><dd>Branca</dd></dl>
+              <ul class="feat" aria-label="Principais características"><li>Ótima absorção.</li><li>Não solta fiapos.</li></ul>
+              <div class="acts"><button class="add" type="button" data-add="9" aria-pressed="false">Adicionar à cotação <span aria-hidden="true">+</span></button><button class="more" type="button" data-open="9">Ficha</button></div>
+            </div></article></li>
+          <li data-id="10"><article class="card" id="p10" aria-labelledby="n10">
+            <button class="ph" type="button" data-open="10" aria-label="Ver ficha técnica: Trapo de algodão colorido liso"><img src="img/produto-10.jpg" alt="Trapo de algodão colorido liso" width="384" height="512" loading="lazy"><span class="tag">PRODUTO 10</span></button>
+            <div class="body"><h4 id="n10">Trapo de algodão colorido liso</h4><p class="ind">Indicado para limpezas delicadas e pesadas.</p>
+              <dl class="spec"><dt>Material</dt><dd>Algodão</dd><dt>Cor</dt><dd>Colorido</dd><dt>Acabamento</dt><dd>Liso</dd></dl>
+              <ul class="feat" aria-label="Principais características"><li>Ótima absorção.</li><li>Não solta fiapos.</li></ul>
+              <div class="acts"><button class="add" type="button" data-add="10" aria-pressed="false">Adicionar à cotação <span aria-hidden="true">+</span></button><button class="more" type="button" data-open="10">Ficha</button></div>
+            </div></article></li>
+          <li data-id="11"><article class="card" id="p11" aria-labelledby="n11">
+            <button class="ph" type="button" data-open="11" aria-label="Ver ficha técnica: Trapo de algodão colorido liso grosso"><img src="img/produto-11.jpg" alt="Trapo de algodão colorido liso grosso" width="384" height="512" loading="lazy"><span class="tag">PRODUTO 11</span></button>
+            <div class="body"><h4 id="n11">Trapo de algodão colorido liso grosso</h4><p class="ind">Indicado para limpeza pesada.</p>
+              <dl class="spec"><dt>Material</dt><dd>Algodão</dd><dt>Cor</dt><dd>Colorido</dd><dt>Acabamento</dt><dd>Liso grosso</dd></dl>
+              <ul class="feat" aria-label="Principais características"><li>Ótima absorção.</li><li>Não solta fiapos.</li></ul>
+              <div class="acts"><button class="add" type="button" data-add="11" aria-pressed="false">Adicionar à cotação <span aria-hidden="true">+</span></button><button class="more" type="button" data-open="11">Ficha</button></div>
+            </div></article></li>
+          <li data-id="12"><article class="card" id="p12" aria-labelledby="n12">
+            <button class="ph" type="button" data-open="12" aria-label="Ver ficha técnica: Trapo de malha liso colorido"><img src="img/produto-12.jpg" alt="Trapo de malha liso colorido" width="384" height="512" loading="lazy"><span class="tag">PRODUTO 12</span></button>
+            <div class="body"><h4 id="n12">Trapo de malha liso colorido</h4><p class="ind">Indicado para limpeza leve e para a manutenção de peças e maquinários.</p>
+              <dl class="spec"><dt>Material</dt><dd>Malha</dd><dt>Cor</dt><dd>Colorido</dd><dt>Acabamento</dt><dd>Liso</dd></dl>
+              <ul class="feat" aria-label="Principais características"><li>Absorção média.</li><li>Indicado para manutenção.</li></ul>
+              <div class="acts"><button class="add" type="button" data-add="12" aria-pressed="false">Adicionar à cotação <span aria-hidden="true">+</span></button><button class="more" type="button" data-open="12">Ficha</button></div>
+            </div></article></li>
+          <li data-id="13"><article class="card" id="p13" aria-labelledby="n13">
+            <button class="ph" type="button" data-open="13" aria-label="Ver ficha técnica: Trapo de malha liso branco"><img src="img/produto-13.jpg" alt="Trapo de malha liso branco" width="292" height="389" loading="lazy"><span class="tag">PRODUTO 13</span></button>
+            <div class="body"><h4 id="n13">Trapo de malha liso branco</h4><p class="ind">Indicado para limpeza leve e para a manutenção de peças e maquinários.</p>
+              <dl class="spec"><dt>Material</dt><dd>Malha (PV)</dd><dt>Cor</dt><dd>Branca</dd><dt>Acabamento</dt><dd>Liso</dd></dl>
+              <ul class="feat" aria-label="Principais características"><li>Ótima absorção.</li><li>Não solta fiapos.</li><li>Indicado para aplicações de produtos químicos.</li></ul>
+              <div class="acts"><button class="add" type="button" data-add="13" aria-pressed="false">Adicionar à cotação <span aria-hidden="true">+</span></button><button class="more" type="button" data-open="13">Ficha</button></div>
+            </div></article></li>
+          <li data-id="14"><article class="card" id="p14" aria-labelledby="n14">
+            <button class="ph" type="button" data-open="14" aria-label="Ver ficha técnica: Retalho para enchimento"><img src="img/produto-14.jpg" alt="Retalho para enchimento" width="352" height="417" loading="lazy"><span class="tag">PRODUTO 14</span></button>
+            <div class="body"><h4 id="n14">Retalho para enchimento</h4><p class="ind">Indicado para o enchimento de sacos para academia, pufes e almofadas.</p>
+              <dl class="spec"><dt>Material</dt><dd>Misto</dd><dt>Cor</dt><dd>Colorido</dd><dt>Acabamento</dt><dd>Retalhos</dd></dl>
+              <ul class="feat" aria-label="Principais características"><li>Versátil para diferentes finalidades.</li></ul>
+              <div class="acts"><button class="add" type="button" data-add="14" aria-pressed="false">Adicionar à cotação <span aria-hidden="true">+</span></button><button class="more" type="button" data-open="14">Ficha</button></div>
+            </div></article></li>
+        </ul>
+      </section>
+      <section class="line-sec" id="outros" aria-labelledby="h-outros">
+        <header class="line-head">
+          <div class="txt"><span class="no">03</span><h3 id="h-outros">Outros materiais</h3><p>Materiais para aplicações específicas além da limpeza, como aplicação de produtos químicos, vedação e fabricação de vassouras.</p>
+            <div class="meta"><b>1 produto</b><span>Disponível nas embalagens:</span><ul class="pack"><li>1kg a 50kg</li></ul></div></div>
+          <img src="img/capa-outros.jpg" alt="Produtos da linha Outros materiais" width="760" height="528" loading="lazy">
+        </header>
+        <ul class="products">
+          <li data-id="15"><article class="card" id="p15" aria-labelledby="n15">
+            <button class="ph" type="button" data-open="15" aria-label="Ver ficha técnica: Meada"><img src="img/produto-15.jpg" alt="Meada" width="384" height="406" loading="lazy"><span class="tag">PRODUTO 15</span></button>
+            <div class="body"><h4 id="n15">Meada</h4><p class="ind">Indicada para a aplicação de produtos químicos, vedação e fabricação de vassouras.</p>
+              <dl class="spec"><dt>Tipo</dt><dd>Meada</dd></dl>
+              <ul class="feat" aria-label="Principais características"><li>Utilizada em serviços de reparo em embarcações.</li></ul>
+              <div class="acts"><button class="add" type="button" data-add="15" aria-pressed="false">Adicionar à cotação <span aria-hidden="true">+</span></button><button class="more" type="button" data-open="15">Ficha</button></div>
+            </div></article></li>
+        </ul>
+      </section>
+
+      <p class="empty" id="empty" hidden>Nenhum produto encontrado com esses filtros.</p>
+      <p class="price-note">Os preços são definidos conforme o produto, a modalidade de embalagem e a quantidade solicitada.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="como-funciona" aria-labelledby="h-proc">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Compromisso com o cliente</p>
+        <h2 id="h-proc">Como funciona a cotação</h2>
+      </div>
+      <ol class="process">
+        <li><span class="num">01</span><h3>Identificar a necessidade</h3><p>Produto, aplicação, peso e quantidade desejada.</p></li>
+        <li><span class="num">02</span><h3>Definir a solução</h3><p>Selecionar material e embalagem conforme a demanda.</p></li>
+        <li><span class="num">03</span><h3>Cotar e negociar</h3><p>Preço e condições definidos por produto e volume.</p></li>
+        <li><span class="num">04</span><h3>Acompanhar</h3><p>Relacionamento comercial e atendimento ao cliente.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec contact" id="contato" aria-labelledby="h-contato">
+    <div class="wrap grid">
+      <div>
+        <p class="label">Contato comercial</p>
+        <h2 id="h-contato">Solicite sua cotação</h2>
+        <p class="lede">Escolha a linha de produtos e fale direto com a equipe pelo WhatsApp.</p>
+        <ul class="quick"><li><a href="https://wa.me/5581999273629?text=Ol%C3%A1%2C%20M.A.C%20Estopas%21%20Gostaria%20de%20uma%20cota%C3%A7%C3%A3o%20de%20ESTOPAS." target="_blank" rel="noopener"><span>Cotação: Estopas<small>Embalagens: 100g a 1kg · 2kg a 5kg · 10 a 50kg</small></span><span aria-hidden="true">↗</span></a></li><li><a href="https://wa.me/5581999273629?text=Ol%C3%A1%2C%20M.A.C%20Estopas%21%20Gostaria%20de%20uma%20cota%C3%A7%C3%A3o%20de%20TRAPOS%2C%20PANOS%2C%20TAPETES%20E%20RETALHOS." target="_blank" rel="noopener"><span>Cotação: Trapos, panos, tapetes e retalhos<small>Embalagens: 1kg a 50kg</small></span><span aria-hidden="true">↗</span></a></li><li><a href="https://wa.me/5581999273629?text=Ol%C3%A1%2C%20M.A.C%20Estopas%21%20Gostaria%20de%20uma%20cota%C3%A7%C3%A3o%20de%20OUTROS%20MATERIAIS." target="_blank" rel="noopener"><span>Cotação: Outros materiais<small>Embalagens: 1kg a 50kg</small></span><span aria-hidden="true">↗</span></a></li></ul>
+      </div>
+      <address class="info">
+        <div class="row"><span>Telefone e WhatsApp</span><div><strong>(81) 99927-3629</strong><button class="copy" type="button" data-copy="(81) 99927-3629">Copiar</button></div></div>
+        <div class="row"><span>E-mail</span><div><strong>macestopas@gmail.com</strong><button class="copy" type="button" data-copy="macestopas@gmail.com">Copiar</button></div></div>
+        <div class="row"><span>Localização</span><div><strong>Jaboatão dos Guararapes – PE</strong></div></div>
+        <a class="btn btn-zap" href="https://wa.me/5581999273629" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3z"/></svg> Abrir conversa no WhatsApp</a>
+      </address>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p><b>M.A.C ESTOPAS</b> · Resistência • Qualidade • Confiança</p>
+    <p>Classificação da informação: pública · <button class="link-btn" id="replay" type="button">Rever abertura</button></p>
+  </div>
+  <div class="wrap dev">
+    <p class="dev-line">Desenvolvido por <a class="dev-link" href="https://nexobytech.com.br" target="_blank" rel="noopener"><img src="img/logo-nexo.png" alt="NEXO by Tech" width="215" height="43"></a></p>
+  </div>
+</footer>
+
+<div class="fab">
+  <button class="qbtn" id="fabCart" type="button" hidden>Enviar cotação (<span id="fabN">0</span>)</button>
+  <a class="wa" href="https://wa.me/5581999273629?text=Ol%C3%A1%2C%20M.A.C%20Estopas!" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3z"/></svg></a>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-labelledby="h-drawer" aria-hidden="true">
+  <div class="dh"><h2 id="h-drawer">Minha cotação</h2><button class="x" id="closeDrawer" type="button" aria-label="Fechar">×</button></div>
+  <div class="scroll">
+    <div id="items"></div>
+    <form class="fields" id="cform" novalidate>
+      <label for="fNome">Seu nome<input id="fNome" autocomplete="name"></label>
+      <label for="fEmp">Empresa<input id="fEmp" autocomplete="organization"></label>
+      <label for="fCid">Cidade / bairro<input id="fCid" autocomplete="address-level2"></label>
+      <label for="fObs">Observações<textarea id="fObs"></textarea></label>
+    </form>
+    <div><p class="label">Prévia da mensagem</p><div class="preview" id="preview"></div></div>
+  </div>
+  <div class="df">
+    <a class="btn btn-zap" id="sendWa" href="https://wa.me/5581999273629" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3z"/></svg> Enviar pelo WhatsApp</a>
+    <div class="row2"><button type="button" id="copyMsg">Copiar mensagem</button><button type="button" id="clearCart">Limpar lista</button></div>
+  </div>
+</aside>
+
+<dialog class="pd" id="pd" aria-labelledby="pdName">
+  <button class="x close" type="button" id="pdClose" aria-label="Fechar ficha">×</button>
+  <div class="g">
+    <div class="img"><img id="pdImg" alt=""></div>
+    <div class="info2">
+      <div><p class="label" id="pdRef"></p><h3 id="pdName"></h3><p class="sub" id="pdLine"></p></div>
+      <p id="pdDesc" class="pd-desc"></p>
+      <dl class="spec" id="pdSpec"></dl>
+      <div><p class="label feat-title">Principais características</p><ul class="feat" id="pdFeat"></ul></div>
+      <p class="pk" id="pdPack"></p>
+      <div class="acts">
+        <button class="add" id="pdAdd" type="button"></button>
+        <a class="btn btn-zap" id="pdWa" target="_blank" rel="noopener" href="https://wa.me/5581999273629">Perguntar sobre este produto</a>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script type="application/json" id="catalog-data">{"linhas": [{"id": "estopas", "numero": "01", "titulo": "Estopas", "descricao": "Tecidos desfiados ou moídos, em opções brancas, coloridas, cruas e 100% algodão, indicadas para limpeza e polimento.", "indice": ["Desfiada Branca – Malha fria / 100% Algodão", "Desfiada Colorida – Malha fria / 100% Algodão", "Moída – Crua (branca) / Colorida"], "embalagens": ["100g a 1kg", "2kg a 5kg", "10 a 50kg"], "capa": "img/capa-estopas.jpg"}, {"id": "trapos", "numero": "02", "titulo": "Trapos, panos, tapetes e retalhos", "descricao": "Materiais em algodão e malha, lisos, costurados ou destinados a enchimento, para limpezas leves, delicadas e pesadas e atividades de manutenção.", "indice": ["Algodão", "Malha", "Costurado"], "embalagens": ["1kg a 50kg"], "capa": "img/capa-trapos.jpg"}, {"id": "outros", "numero": "03", "titulo": "Outros materiais", "descricao": "Materiais para aplicações específicas além da limpeza, como aplicação de produtos químicos, vedação e fabricação de vassouras.", "indice": ["Meada"], "embalagens": ["1kg a 50kg"], "capa": "img/capa-outros.jpg"}], "produtos": [{"id": 1, "linha": "estopas", "nome": "Estopa branca desfiada malha fria (PV)", "indicacao": "Indicada para limpeza leve e para a aplicação de produtos químicos.", "specs": [["Material", "Malha fria (PV)"], ["Cor", "Branca"], ["Forma", "Desfiada"]], "caracteristicas": ["Não solta fiapos.", "Absorção média."], "imagem": "img/produto-01.jpg"}, {"id": 2, "linha": "estopas", "nome": "Estopa colorida desfiada malha fria (PV)", "indicacao": "Indicada para a limpeza de peças e equipamentos.", "specs": [["Material", "Malha fria (PV)"], ["Cor", "Colorida"], ["Forma", "Desfiada"]], "caracteristicas": ["Não solta fiapos.", "Absorção média."], "imagem": "img/produto-02.jpg"}, {"id": 3, "linha": "estopas", "nome": "Estopa colorida desfiada 100% algodão", "indicacao": "Indicada para a limpeza de peças e maquinários sensíveis.", "specs": [["Material", "100% algodão"], ["Cor", "Colorida"], ["Forma", "Desfiada"]], "caracteristicas": ["Ótima absorção.", "Não solta fiapos."], "imagem": "img/produto-03.jpg"}, {"id": 4, "linha": "estopas", "nome": "Estopa branca 100% algodão", "indicacao": "Indicada para polimento e para a limpeza de peças e maquinários delicados, podendo ser utilizada em atividades de vistoria.", "specs": [["Material", "100% algodão"], ["Cor", "Branca"], ["Forma", "Desfiada"]], "caracteristicas": ["100% algodão.", "Indicada para aplicações delicadas.", "Ótima absorção."], "imagem": "img/produto-04.jpg"}, {"id": 5, "linha": "estopas", "nome": "Estopa crua moída", "indicacao": "Indicada para limpeza pesada e recomendada para maquinários pesados.", "specs": [["Cor", "Crua"], ["Forma", "Moída"]], "caracteristicas": ["Ótima absorção.", "Solta fiapos.", "Não recomendada para peças delicadas e motores."], "imagem": "img/produto-05.jpg"}, {"id": 6, "linha": "estopas", "nome": "Estopa colorida moída", "indicacao": "Indicada para limpeza pesada e recomendada para maquinários pesados.", "specs": [["Cor", "Colorida"], ["Forma", "Moída"]], "caracteristicas": ["Ótima absorção.", "Solta fiapos.", "Não recomendada para peças delicadas e motores."], "imagem": "img/produto-06.jpg"}, {"id": 7, "linha": "trapos", "nome": "Trapo costurado colorido (tapete)", "indicacao": "Indicado para a limpeza de maquinários, embarcações e para a manutenção de tubulações.", "specs": [["Material", "Misto"], ["Cor", "Colorido"], ["Forma", "Costurado"]], "caracteristicas": ["Ótima absorção.", "Não solta fiapos."], "imagem": "img/produto-07.jpg"}, {"id": 8, "linha": "trapos", "nome": "Trapo costurado branco (tapete)", "indicacao": "Indicado para a limpeza de maquinários, embarcações e para a manutenção de tubulações.", "specs": [["Material", "Misto"], ["Cor", "Branca"], ["Forma", "Costurado"]], "caracteristicas": ["Ótima absorção.", "Não solta fiapos.", "Ótimo para aplicação de produto químico."], "imagem": "img/produto-08.jpg"}, {"id": 9, "linha": "trapos", "nome": "Trapo de algodão branco", "indicacao": "Indicado para a limpeza de peças e equipamentos, especialmente em atividades de vistoria.", "specs": [["Material", "Algodão"], ["Cor", "Branca"]], "caracteristicas": ["Ótima absorção.", "Não solta fiapos."], "imagem": "img/produto-09.jpg"}, {"id": 10, "linha": "trapos", "nome": "Trapo de algodão colorido liso", "indicacao": "Indicado para limpezas delicadas e pesadas.", "specs": [["Material", "Algodão"], ["Cor", "Colorido"], ["Acabamento", "Liso"]], "caracteristicas": ["Ótima absorção.", "Não solta fiapos."], "imagem": "img/produto-10.jpg"}, {"id": 11, "linha": "trapos", "nome": "Trapo de algodão colorido liso grosso", "indicacao": "Indicado para limpeza pesada.", "specs": [["Material", "Algodão"], ["Cor", "Colorido"], ["Acabamento", "Liso grosso"]], "caracteristicas": ["Ótima absorção.", "Não solta fiapos."], "imagem": "img/produto-11.jpg"}, {"id": 12, "linha": "trapos", "nome": "Trapo de malha liso colorido", "indicacao": "Indicado para limpeza leve e para a manutenção de peças e maquinários.", "specs": [["Material", "Malha"], ["Cor", "Colorido"], ["Acabamento", "Liso"]], "caracteristicas": ["Absorção média.", "Indicado para manutenção."], "imagem": "img/produto-12.jpg"}, {"id": 13, "linha": "trapos", "nome": "Trapo de malha liso branco", "indicacao": "Indicado para limpeza leve e para a manutenção de peças e maquinários.", "specs": [["Material", "Malha (PV)"], ["Cor", "Branca"], ["Acabamento", "Liso"]], "caracteristicas": ["Ótima absorção.", "Não solta fiapos.", "Indicado para aplicações de produtos químicos."], "imagem": "img/produto-13.jpg"}, {"id": 14, "linha": "trapos", "nome": "Retalho para enchimento", "indicacao": "Indicado para o enchimento de sacos para academia, pufes e almofadas.", "specs": [["Material", "Misto"], ["Cor", "Colorido"], ["Acabamento", "Retalhos"]], "caracteristicas": ["Versátil para diferentes finalidades."], "imagem": "img/produto-14.jpg"}, {"id": 15, "linha": "outros", "nome": "Meada", "indicacao": "Indicada para a aplicação de produtos químicos, vedação e fabricação de vassouras.", "specs": [["Tipo", "Meada"]], "caracteristicas": ["Utilizada em serviços de reparo em embarcações."], "imagem": "img/produto-15.jpg"}], "observacao_precos": "Os preços são definidos conforme o produto, a modalidade de embalagem e a quantidade solicitada."}</script>
+<script>
+(()=>{
+const WA='5581999273629';
+const waLink=t=>'https://wa.me/'+WA+'?text='+encodeURIComponent(t);
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const rand=(a,b)=>a+Math.random()*(b-a),pick=a=>a[Math.floor(Math.random()*a.length)];
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const store={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const DATA=JSON.parse($('#catalog-data').textContent);
+const P=DATA.produtos,L=Object.fromEntries(DATA.linhas.map(l=>[l.id,l]));
+const prod=id=>P.find(p=>p.id==id);
+const imgOf=id=>{const i=document.querySelector('#p'+String(id).padStart(2,'0')+' .ph img');return i?i.currentSrc||i.src:''};
+const ref=id=>'Produto '+String(id).padStart(2,'0');
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const warnFeat=t=>/^Solta fiapos|^Não recomendada/.test(t);
+
+/* ---------- estopa (sprite) ---------- */
+function shade(hex,f){const n=parseInt(hex.slice(1),16);let r=n>>16,g=n>>8&255,b=n&255;r=Math.round(r*(1+f));g=Math.round(g*(1+f));b=Math.round(b*(1+f));return`rgb(${r},${g},${b})`}
+function makeMop(S){
+  const c=document.createElement('canvas');c.width=c.height=S;const x=c.getContext('2d');
+  const pal=['#f6f4ef','#ebe7de','#fdfcf9','#ddd8cd'],acc=['#2f7fd1','#4f9dff','#1b4fa0'];
+  const g=x.createRadialGradient(S/2,S*.56,S*.05,S/2,S*.56,S*.42);g.addColorStop(0,'rgba(120,110,95,.55)');g.addColorStop(1,'rgba(120,110,95,0)');
+  x.fillStyle=g;x.beginPath();x.ellipse(S/2,S*.55,S*.4,S*.34,0,0,7);x.fill();
+  const sc=S/220,rx=S*.33,ry=S*.27,n=S*3.2;
+  for(let pass=0;pass<2;pass++)for(let i=0;i<n*(pass?.75:.45);i++){
+    const a=Math.random()*7,rr=Math.sqrt(Math.random())*(pass?.85:1);
+    const px=S/2+Math.cos(a)*rr*rx,py=S/2+Math.sin(a)*rr*ry-(pass?ry*.06:0);
+    const len=sc*rand(14,46),d=Math.random()*7,k=rand(-1,1)*len*.9;
+    let c0=Math.random()<.06?pick(acc):pick(pal);
+    x.strokeStyle=pass?c0:shade(c0,-.32);x.globalAlpha=pass?rand(.65,1):rand(.35,.6);x.lineWidth=sc*rand(.5,1.5);
+    x.beginPath();x.moveTo(px,py);x.bezierCurveTo(px+Math.cos(d+1.6)*k,py+Math.sin(d+1.6)*k,px+Math.cos(d)*len-Math.cos(d-1.6)*k,py+Math.sin(d)*len-Math.sin(d-1.6)*k,px+Math.cos(d)*len,py+Math.sin(d)*len);x.stroke();
+  }
+  x.globalAlpha=1;return c.toDataURL();
+}
+const mopURL=makeMop(260);$$('.mop img').forEach(i=>i.src=mopURL);
+
+/* ---------- cotação ---------- */
+let cart=store.get('mac_cart_v2',{}); // id -> {emb, qtd}
+Object.keys(cart).forEach(id=>{if(!prod(id))delete cart[id]});
+const FORM=['fNome','fEmp','fCid','fObs'];
+const saved=store.get('mac_form',{});FORM.forEach(f=>{if(saved[f])$('#'+f).value=saved[f]});
+const inCart=id=>Object.prototype.hasOwnProperty.call(cart,id);
+const save=()=>store.set('mac_cart_v2',cart);
+function toggle(id){
+  const p=prod(id);
+  if(inCart(id)){delete cart[id];toast('Removido da cotação')}
+  else{cart[id]={emb:'',qtd:''};toast('Adicionado: '+p.nome);const b=$('#cartBtn');b.classList.remove('bump');void b.offsetWidth;b.classList.add('bump')}
+  save();sync();
+}
+function message(){
+  const ids=Object.keys(cart);
+  let m='Olá, M.A.C Estopas! Gostaria de solicitar uma cotação:\n\n';
+  if(!ids.length)m+='(nenhum produto selecionado)\n';
+  ids.forEach(id=>{const p=prod(id),c=cart[id];m+='• '+ref(p.id)+' – '+p.nome.toUpperCase()+'\n   Embalagem: '+(c.emb||'a definir')+' | Quantidade: '+(c.qtd||'a definir')+'\n'});
+  const v=f=>$('#'+f).value.trim();
+  m+='\nNome: '+(v('fNome')||'—')+'\nEmpresa: '+(v('fEmp')||'—')+'\nCidade/bairro: '+(v('fCid')||'—');
+  if(v('fObs'))m+='\nObservações: '+v('fObs');
+  return m;
+}
+function renderDrawer(){
+  const ids=Object.keys(cart),box=$('#items');
+  box.innerHTML=!ids.length?'<p class="empty-cart">Sua lista está vazia.<br>Use “Adicionar à cotação” nos produtos do catálogo.</p>':
+  ids.map(id=>{const p=prod(id),c=cart[id],packs=L[p.linha].embalagens;
+    return`<div class="item"><img src="${imgOf(p.id)}" alt=""><div><strong>${esc(p.nome)}</strong><div class="two">
+      <select id="emb${p.id}" data-emb="${p.id}" aria-label="Embalagem de ${esc(p.nome)}"><option value="">Embalagem…</option>${packs.map(e=>`<option ${c.emb===e?'selected':''}>${e}</option>`).join('')}</select>
+      <input id="qtd${p.id}" data-qtd="${p.id}" value="${esc(c.qtd||'')}" placeholder="Quantidade" aria-label="Quantidade de ${esc(p.nome)}"></div></div>
+      <button class="rm" type="button" data-rm="${p.id}">Remover</button></div>`}).join('');
+  updateMsg();
+}
+function updateMsg(){const m=message();$('#preview').textContent=m;const a=$('#sendWa');a.href=waLink(m);a.setAttribute('aria-disabled',Object.keys(cart).length?'false':'true')}
+$('#items').addEventListener('input',e=>{const t=e.target;if(t.dataset.qtd){cart[t.dataset.qtd].qtd=t.value}else if(t.dataset.emb){cart[t.dataset.emb].emb=t.value}else return;save();updateMsg()});
+$('#items').addEventListener('click',e=>{const r=e.target.dataset.rm;if(r)toggle(+r)});
+FORM.forEach(f=>$('#'+f).addEventListener('input',()=>{const o={};FORM.forEach(k=>o[k]=$('#'+k).value);store.set('mac_form',o);updateMsg()}));
+$('#cform').addEventListener('submit',e=>e.preventDefault());
+function sync(){
+  const n=Object.keys(cart).length;
+  $('#cartCount').textContent=n;$('#fabN').textContent=n;$('#fabCart').hidden=!n;
+  $$('[data-add]').forEach(b=>{const on=inCart(b.dataset.add);b.classList.toggle('on',on);b.setAttribute('aria-pressed',on);b.innerHTML=on?'✓ Na cotação <span aria-hidden="true">×</span>':'Adicionar à cotação <span aria-hidden="true">+</span>'});
+  if(curPd)setPdBtn();
+  renderDrawer();
+}
+let lastFocus=null;
+function openDrawer(){lastFocus=document.activeElement;const d=$('#drawer');d.classList.add('open');d.setAttribute('aria-hidden','false');$('#scrim').classList.add('open');setTimeout(()=>$('#closeDrawer').focus(),60)}
+function closeDrawer(){const d=$('#drawer');if(!d.classList.contains('open'))return;d.classList.remove('open');d.setAttribute('aria-hidden','true');$('#scrim').classList.remove('open');if(lastFocus)lastFocus.focus()}
+$('#cartBtn').onclick=openDrawer;$('#fabCart').onclick=openDrawer;$('#closeDrawer').onclick=closeDrawer;$('#scrim').onclick=closeDrawer;
+addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer()});
+$('#clearCart').onclick=()=>{cart={};save();sync();toast('Lista limpa')};
+async function copyText(t,el){
+  try{await navigator.clipboard.writeText(t);toast('Copiado')}
+  catch(e){const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r);toast('Texto selecionado. Use Ctrl+C para copiar.')}
+}
+$('#copyMsg').onclick=()=>copyText(message(),$('#preview'));
+$$('.copy').forEach(b=>b.onclick=()=>copyText(b.dataset.copy,b.parentElement.querySelector('strong')));
+let tt;function toast(t){const el=$('#toast');el.textContent=t;el.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>el.classList.remove('show'),2200)}
+
+/* ---------- filtros ---------- */
+let line='todas';const feats=new Set();
+const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+function applyFilter(){
+  const q=norm($('#q').value.trim());let n=0;
+  $$('.products>li').forEach(li=>{const p=prod(li.dataset.id);
+    const hay=norm([p.nome,p.indicacao,...p.specs.flat(),...p.caracteristicas,L[p.linha].titulo].join(' '));
+    const ok=(line==='todas'||p.linha===line)&&[...feats].every(f=>p.caracteristicas.includes(f))&&(!q||q.split(/\s+/).every(w=>hay.includes(w)));
+    li.hidden=!ok;if(ok)n++});
+  $$('.line-sec').forEach(s=>s.hidden=!s.querySelector('.products>li:not([hidden])'));
+  $('#empty').hidden=n>0;$('#result').textContent='Exibindo '+n+' de '+P.length+' produtos';
+}
+$$('[data-line]').forEach(c=>c.onclick=()=>{$$('[data-line]').forEach(x=>x.setAttribute('aria-pressed','false'));c.setAttribute('aria-pressed','true');line=c.dataset.line;applyFilter()});
+$$('[data-feat]').forEach(c=>c.onclick=()=>{const f=c.dataset.feat,on=!feats.has(f);on?feats.add(f):feats.delete(f);c.setAttribute('aria-pressed',on);applyFilter()});
+$('#q').addEventListener('input',applyFilter);
+document.addEventListener('click',e=>{
+  const a=e.target.closest('[data-add]');if(a){toggle(+a.dataset.add);return}
+  const o=e.target.closest('[data-open]');if(o)openPd(+o.dataset.open);
+});
+
+/* ---------- ficha técnica ---------- */
+let curPd=null;const pd=$('#pd');
+function setPdBtn(){const on=inCart(curPd.id),b=$('#pdAdd');b.classList.toggle('on',on);b.innerHTML=on?'✓ Na cotação <span aria-hidden="true">×</span>':'Adicionar à cotação <span aria-hidden="true">+</span>'}
+function openPd(id){
+  const p=curPd=prod(id),l=L[p.linha];
+  $('#pdImg').src=imgOf(p.id);$('#pdImg').alt=p.nome;
+  $('#pdRef').textContent=ref(p.id);$('#pdName').textContent=p.nome;$('#pdLine').textContent=l.numero+' · '+l.titulo;
+  $('#pdDesc').textContent=p.indicacao;
+  $('#pdSpec').innerHTML=p.specs.map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('');
+  $('#pdFeat').innerHTML=p.caracteristicas.map(c=>`<li${warnFeat(c)?' class="warn"':''}>${esc(c)}</li>`).join('');
+  $('#pdPack').textContent='Disponível nas embalagens: '+l.embalagens.join(' · ')+'. '+DATA.observacao_precos;
+  $('#pdWa').href=waLink('Olá, M.A.C Estopas! Tenho interesse no '+ref(p.id)+' – '+p.nome.toUpperCase()+'. Gostaria de uma cotação.');
+  setPdBtn();
+  if(pd.showModal)pd.showModal();else pd.setAttribute('open','');
+}
+$('#pdAdd').onclick=()=>toggle(curPd.id);
+$('#pdClose').onclick=()=>pd.close();
+pd.addEventListener('click',e=>{if(e.target===pd)pd.close()});
+
+/* ---------- menu ---------- */
+$('#menuBtn').onclick=()=>{const o=$('#nav').classList.toggle('open');$('#menuBtn').setAttribute('aria-expanded',o)};
+$('#nav').addEventListener('click',e=>{if(e.target.tagName==='A'){$('#nav').classList.remove('open');$('#menuBtn').setAttribute('aria-expanded','false')}});
+
+/* ---------- sujeira e limpeza ---------- */
+function grime(ctx,w,h,film){
+  const s=Math.min(w,h)/600;
+  ctx.globalCompositeOperation='source-over';ctx.clearRect(0,0,w,h);ctx.fillStyle=film;ctx.fillRect(0,0,w,h);
+  const cols=['58,47,34','86,70,48','40,36,31','110,92,64','70,68,62','30,26,22'];
+  for(let i=0;i<70;i++){const x=rand(0,w),y=rand(0,h),r=rand(30,170)*s,c=pick(cols);const g=ctx.createRadialGradient(x,y,0,x,y,r);g.addColorStop(0,`rgba(${c},${rand(.25,.6)})`);g.addColorStop(1,`rgba(${c},0)`);ctx.fillStyle=g;ctx.fillRect(x-r,y-r,r*2,r*2)}
+  ctx.lineCap='round';
+  for(let i=0;i<14;i++){ctx.strokeStyle=`rgba(${pick(cols)},${rand(.18,.35)})`;ctx.lineWidth=rand(18,55)*s;ctx.beginPath();const x=rand(0,w),y=rand(0,h);ctx.moveTo(x,y);ctx.quadraticCurveTo(x+rand(-200,200)*s,y+rand(-120,120)*s,x+rand(-320,320)*s,y+rand(-160,160)*s);ctx.stroke()}
+  for(let i=0;i<7;i++){const x=rand(0,w),y=rand(0,h),r=rand(25,70)*s;ctx.strokeStyle=`rgba(25,20,15,${rand(.25,.45)})`;ctx.lineWidth=rand(3,8)*s;ctx.beginPath();ctx.ellipse(x,y,r,r*rand(.7,1),rand(0,3),0,7);ctx.stroke();ctx.fillStyle='rgba(20,16,12,.18)';ctx.fill()}
+  for(let i=0;i<5;i++){ctx.save();ctx.translate(rand(0,w),rand(0,h));ctx.rotate(rand(0,3));ctx.strokeStyle='rgba(30,25,20,.28)';ctx.lineWidth=1.6*s;ctx.setLineDash([rand(6,14)*s,rand(2,5)*s]);for(let k=1;k<12;k++){ctx.beginPath();ctx.ellipse(0,0,k*3.2*s,k*4.2*s,0,0,7);ctx.stroke()}ctx.restore();ctx.setLineDash([])}
+  for(let i=0;i<500;i++){ctx.fillStyle=`rgba(${pick(cols)},${rand(.3,.8)})`;ctx.beginPath();ctx.arc(rand(0,w),rand(0,h),rand(.6,3.2)*s,0,7);ctx.fill()}
+}
+function makeBrush(R){
+  const c=document.createElement('canvas');c.width=c.height=R*2;const x=c.getContext('2d');
+  const g=x.createRadialGradient(R,R,0,R,R,R);g.addColorStop(0,'rgba(0,0,0,1)');g.addColorStop(.6,'rgba(0,0,0,.9)');g.addColorStop(1,'rgba(0,0,0,0)');x.fillStyle=g;x.fillRect(0,0,R*2,R*2);
+  for(let i=0;i<60;i++){const a=Math.random()*7,r=R*rand(.6,1);x.fillStyle='rgba(0,0,0,.5)';x.beginPath();x.arc(R+Math.cos(a)*r*.85,R+Math.sin(a)*r*.85,R*rand(.03,.1),0,7);x.fill()}
+  return c;
+}
+function wipe(ctx,brush,x0,y0,x1,y1){
+  const R=brush.width/2,d=Math.hypot(x1-x0,y1-y0),n=Math.max(1,Math.ceil(d/(R*.25)));
+  ctx.globalCompositeOperation='destination-out';
+  for(let i=0;i<=n;i++){const t=i/n;ctx.drawImage(brush,x0+(x1-x0)*t-R,y0+(y1-y0)*t-R)}
+  ctx.globalCompositeOperation='source-over';
+}
+
+/* placa */
+const plate=$('#plate'),pc=$('#plateCanvas'),px=pc.getContext('2d',{willReadFrequently:true}),pm=$('#plateMop');
+let pBrush,pLast=null,pDone=false,pTick=0;
+function initPlate(){
+  const r=plate.getBoundingClientRect();pc.width=Math.max(10,Math.round(r.width));pc.height=Math.max(10,Math.round(r.height));
+  grime(px,pc.width,pc.height,'rgba(96,81,60,.93)');pBrush=makeBrush(Math.max(22,Math.round(pc.width*.075)));
+  pDone=false;pc.style.opacity=1;plate.classList.remove('done');$('#plateHint').style.opacity=1;setPct(0);
+  const ms=Math.round(pc.width*.24);pm.style.width=pm.style.height=ms+'px';
+}
+function setPct(v){$('#pct').textContent=v+'%';$('#meter').style.width=v+'%'}
+function measure(){
+  const {width:w,height:h}=pc,d=px.getImageData(0,0,w,h).data;let dirty=0,tot=0;
+  for(let y=0;y<h;y+=6)for(let x=0;x<w;x+=6){tot++;if(d[(y*w+x)*4+3]>60)dirty++}
+  const v=Math.min(100,Math.round((1-dirty/tot)*100/.94));setPct(v);
+  if(v>=100&&!pDone){pDone=true;pc.style.opacity=0;plate.classList.add('done');pm.style.opacity=0}
+}
+const pPos=e=>{const r=pc.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top}};
+plate.addEventListener('pointermove',e=>{
+  const p=pPos(e),ms=pm.offsetWidth;pm.style.transform=`translate(${p.x-ms/2}px,${p.y-ms/2}px) rotate(${(p.x*.4)%40-20}deg)`;
+  if(pDone)return;pm.style.opacity=1;
+  if(e.pointerType==='mouse'||e.buttons){$('#plateHint').style.opacity=0;if(pLast)wipe(px,pBrush,pLast.x,pLast.y,p.x,p.y);pLast=p;
+    const now=performance.now();if(now-pTick>180){pTick=now;measure()}}
+});
+plate.addEventListener('pointerdown',e=>{pLast=pPos(e);try{plate.setPointerCapture(e.pointerId)}catch(_){}});
+plate.addEventListener('pointerleave',()=>{pLast=null;pm.style.opacity=0;if(!pDone)measure()});
+plate.addEventListener('pointerup',e=>{if(e.pointerType!=='mouse'){pLast=null;pm.style.opacity=0}measure()});
+$('#dirtyAgain').onclick=initPlate;
+let rz;addEventListener('resize',()=>{clearTimeout(rz);rz=setTimeout(()=>{if(Math.abs(plate.getBoundingClientRect().width-pc.width)>40)initPlate()},250)});
+
+/* abertura */
+const intro=$('#intro'),ic=$('#introCanvas'),fx=$('#introFx'),im=$('#introMop');
+let ictx,fctx,IB,raf,uw=null;
+function endIntro(){
+  if(intro.hidden)return;cancelAnimationFrame(raf);
+  im.style.transition='transform .6s ease-in';im.style.transform=`translate(${innerWidth+200}px,-300px) rotate(80deg)`;
+  intro.classList.add('fade');document.documentElement.style.overflow='';
+  setTimeout(()=>{intro.hidden=true;intro.classList.remove('fade');im.style.transition=''},720);
+}
+function runIntro(){
+  const dpr=Math.min(devicePixelRatio||1,1.5),W=innerWidth,H=innerHeight;
+  intro.hidden=false;document.documentElement.style.overflow='hidden';$('#introCap').style.opacity=1;
+  [ic,fx].forEach(c=>{c.width=W*dpr;c.height=H*dpr});
+  ictx=ic.getContext('2d');fctx=fx.getContext('2d');ictx.setTransform(dpr,0,0,dpr,0,0);fctx.setTransform(dpr,0,0,dpr,0,0);
+  grime(ictx,W,H,'rgba(92,78,58,.9)');
+  const R=Math.max(70,Math.min(W,H)*.16);IB=makeBrush(Math.round(R));
+  const ms=R*2.3;im.style.width=im.style.height=ms+'px';
+  const rows=Math.ceil(H/(R*1.25))+1,pts=[{x:-R,y:R*.4},{x:W*.5,y:H*.5}];
+  for(let i=0;i<rows;i++){const y=R*.4+i*(H-R*.8)/(rows-1),l=-R*.3,r=W+R*.3;pts.push({x:i%2?r:l,y:y+rand(-10,10)},{x:i%2?l:r,y:y+rand(-10,10)})}
+  const seg=[];let total=0;for(let i=1;i<pts.length;i++){const d=Math.hypot(pts[i].x-pts[i-1].x,pts[i].y-pts[i-1].y);seg.push(d);total+=d}
+  const DUR=Math.min(3600,1800+rows*260),t0=performance.now();let last=pts[0],parts=[];
+  const at=dist=>{let i=0;while(i<seg.length&&dist>seg[i]){dist-=seg[i];i++}if(i>=seg.length)return pts[pts.length-1];const a=pts[i],b=pts[i+1],t=dist/seg[i];return{x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t}};
+  function frame(now){
+    const k=Math.min(1,(now-t0)/DUR),e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2,p=at(e*total);
+    wipe(ictx,IB,last.x,last.y,p.x,p.y);
+    if(k>.14)$('#introCap').style.opacity=0;
+    im.style.transform=`translate(${p.x-ms/2}px,${p.y-ms/2}px) rotate(${Math.sin(now/120)*14+(p.x-last.x)*.3}deg)`;
+    for(let i=0;i<2;i++)parts.push({x:p.x+rand(-R*.6,R*.6),y:p.y+rand(-R*.4,R*.4),vx:rand(-1,1),vy:rand(.5,2),l:1,a:rand(0,6),c:pick(['#f4f1ea','#d9d2c4','#7aa8e8'])});
+    fctx.clearRect(0,0,W,H);parts=parts.filter(q=>(q.l-=.02)>0);
+    parts.forEach(q=>{q.x+=q.vx;q.y+=q.vy;q.vy+=.05;q.a+=.1;fctx.globalAlpha=q.l;fctx.strokeStyle=q.c;fctx.lineWidth=1.4;fctx.beginPath();fctx.moveTo(q.x,q.y);fctx.quadraticCurveTo(q.x+Math.cos(q.a)*6,q.y+Math.sin(q.a)*6,q.x+8,q.y+3);fctx.stroke()});fctx.globalAlpha=1;
+    last=p;if(k<1)raf=requestAnimationFrame(frame);else endIntro();
+  }
+  raf=requestAnimationFrame(frame);
+}
+intro.addEventListener('pointermove',e=>{if(!IB)return;if(uw)wipe(ictx,IB,uw.x,uw.y,e.clientX,e.clientY);uw={x:e.clientX,y:e.clientY}});
+$('#skipIntro').onclick=endIntro;
+$('#replay').onclick=()=>{scrollTo({top:0});runIntro()};
+
+/* início */
+sync();applyFilter();
+requestAnimationFrame(initPlate);
+if(reduce||document.visibilityState==='hidden')intro.hidden=true;else runIntro();
+})();
+</script>
+</body>
+</html>
